@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-String NameRest1 = "زرزور";
+String NameRest1 = "Chilli house";
 String NameRest2 = "برجر ميكز";
 String NameRest3 = "عروس دمشق";
 
@@ -16,13 +16,13 @@ String giftIcon = "imgs/p25.png";
 String booksIcon = "imgs/p21.png";
 String starIcon = "imgs/p26.png";
 
-String discount = "خصومات";
-String home = "الكل";
-String neew = "جديد";
-String wallet = "يدعم المحفظة";
-String gift = "توصيل مجاني";
+String discount = "DISCOUNTS";
+String home = "ALL";
+String neew = "NEW";
+String wallet = "WALLET";
+String gift = "FREE DELIVERY";
 String books = "";
-String star = "حصري";
+String star = "EXCLUSIVE";
 
 String breakfastIcon = "imgs/p8.png";
 String ResturantIcon = "imgs/p3.png";
@@ -42,23 +42,23 @@ String nutsIcon = "imgs/nuts.png";
 String flowerIcon = "imgs/flower.png";
 String blushyIcon = "imgs/p4.png";
 
-String flower = "الزهور";
-String nuts = "الكرزات";
-String meal = "التجهيزات الغذائية";
-String breakfast = "فطور صباحي";
-String Resturant = "المطاعم";
-String card = "بطاقات التعبئة";
-String coffee = "البن والقهوة";
-String veg = "الفواكه و الخضروات";
-String healthy = "دايت فود";
-String library = "المكتبة";
+String flower = "Flowers";
+String nuts = "Nuts";
+String meal = "Food Supplies";
+String breakfast = "Breakfast";
+String Resturant = "Resturants";
+String card = "Credit Card";
+String coffee = "Coffee";
+String veg = "Fruit & Veg";
+String healthy = "Diet Food";
+String library = "Library";
 String icecream = "المرطبات";
-String market = "ماركت";
-String sweets = "حلويات ومعجنات";
-String pastry = "المعجنات";
-String blushy = "بلوشي";
-String seafood = "بحرية";
-String meat = "اللحوم";
+String market = "Market";
+String sweets ="Sweets";
+String pastry = "Pastry";
+String blushy = "Blushy";
+String seafood = "Sea Food";
+String meat = "Meat";
 
 int price1 = 5000;
 int price2 = 7500;
@@ -73,19 +73,19 @@ int delever4 = 4000;
 String rating1 = "ممتاز";
 String rating2 = "جيد";
 String rating3 = "متوسط";
-String rating4 = "جيد جدا";
+String rating4 = "جيد";
 
 String location1 = "المنصور";
 String location2 = "زيونة";
 String location3 = "ابو نؤاس";
 String location4 = "كرادة داخل";
-
+ /*
 String pics1 = "imgs/pizza.webp";
 String pics2 = "imgs/pics.webp";
 String pics3 = "imgs/p19.webp";
 String pics4 = "imgs/p17.webp";
 String pics5 = "imgs/new.webp";
-
+*/
 String name1 = "هايزن";
 String name2 = "رويال";
 String name3 = "برجرات";
