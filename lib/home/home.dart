@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:talabati_pro/resPage/resPage.dart';
 
 import '../data/data.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -23,20 +23,20 @@ class _HomePageState extends State<HomePage> {
                 Icons.notifications_outlined,
                 color: Colors.grey.shade900,
               ),
-            )
+            ),
           ],
           elevation: 0,
           title: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text(
+                "Baghdad",
+                style: TextStyle(color: Colors.grey.shade900),
+              ),
               Icon(
                 Icons.arrow_drop_down,
                 color: Colors.grey.shade900,
-              ),
-              Text(
-                "المنصور",
-                style: TextStyle(color: Colors.grey.shade900),
               ),
             ],
           ),
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
               height: 140,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                reverse: true,
+
                 children: [
                   pic(Resturant, ResturantIcon),
                   pic(blushy, blushyIcon),
@@ -79,13 +79,13 @@ class _HomePageState extends State<HomePage> {
               scrollDirection: Axis.vertical,
               children: [
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(
                           top: 6, right: 20, bottom: 6, left: 10),
                       child: Text(
-                        "المحلات الاكثر شيوعا",
+                        "Most popular resturants",
                         style: TextStyle(
                             color: Colors.red,
                             fontSize: 20,
@@ -94,27 +94,27 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Container(
                       height: 2,
-                      width: 180,
+                      width: 250,
                       color: Colors.red,
                     ),
                     Container(
-                      height: 180,
-                      width: 500,
+                      height: 200,
+                      width: MediaQuery.of(context).size.width,
                       child: ListView(
-                        reverse: true,
+
                         scrollDirection: Axis.horizontal,
                         children: [
-                          resturant(NameRest1, pic1),
-                          resturant(NameRest2, pic2),
-                          resturant(NameRest3, pic3),
+                          resturant("Chilli house", "imgs/p15.webp"),
+                          resturant("vitamin", "imgs/20.webp"),
+                          resturant("testy", "imgs/p16.webp"),
                         ],
                       ),
                     ),
                     Container(
                       height: 44,
-                      width: 700,
+                      width: MediaQuery.of(context).size.width,
                       child: ListView(
-                        reverse: true,
+
                         scrollDirection: Axis.horizontal,
                         children: [
                           information(home, homeIcon),
@@ -131,11 +131,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                order(pics1, name1, price1, location1, rating1, delever1),
-                order(pics2, name2, price2, location2, rating2, delever2),
-                order(pics3, name3, price3, location3, rating3, delever3),
-                order(pics4, name4, price4, location4, rating4, delever4),
-                order(pics5, name1, price1, location1, rating1, delever1),
+                order("imgs/pizza.webp", "PIZZA PIZZA", 5000, "Mansoor", "Good", 4500),
+                order("imgs/pics.webp", "ROYAL", 10000, "Zayoona", "Fine", 3000),
+                order("imgs/p19.webp", "BURGERAT", 6000, "Karrada", "Extra", 5000),
+                order("imgs/p17.webp", "CHILLI HOUSE", 4000, "Jadriya", "Good", 4000),
+                order("imgs/new.webp", "BURGER KING", 6000, "Karrada", "Fine", 3500),
               ],
             ))
           ],
@@ -153,20 +153,21 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.all(18),
               tabs: [
                 GButton(
-                  icon: (Icons.circle),
-                  text: 'الحساب',
-                ),
-                GButton(
-                  icon: (Icons.favorite_border),
-                  text: 'الطلبات',
+                  icon: (Icons.home_filled),
+                  text: 'Home',
                 ),
                 GButton(
                   icon: (Icons.search),
-                  text: 'المحفظة',
+                  text: 'Wallet',
                 ),
                 GButton(
-                  icon: (Icons.home_filled),
-                  text: 'الرئيسية',
+                  icon: (Icons.favorite_border),
+                  text: 'Orders',
+                ),
+
+                GButton(
+                  icon: (Icons.circle),
+                  text: 'Account',
                 ),
               ],
             ),
@@ -209,25 +210,27 @@ class _HomePageState extends State<HomePage> {
 
   Container resturant(String namer, String pic) {
     return Container(
-      height: 300,
-      width: 300,
+     // height: 300,
+      width: MediaQuery.of(context).size.width-10,
+      margin: EdgeInsets.only(left: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            margin: EdgeInsets.only(right: 10),
-            height: 130,
-            width: 400,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                image:
-                    DecorationImage(image: AssetImage(pic), fit: BoxFit.fill)),
-          ),
+              margin: EdgeInsets.only(right: 10),
+              height: 150,
+              width: 400,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image:
+                      DecorationImage(image: AssetImage(pic), fit: BoxFit.cover)),
+            ),
+
           Container(
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
@@ -237,25 +240,28 @@ class _HomePageState extends State<HomePage> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold)),
                   ),
-                ]),
+                ]
+    ),
           ),
-        ],
-      ),
+     ]
+      )
+
     );
   }
 
   Container information(String info, String icon) {
     return Container(
+      width: MediaQuery.of(context).size.width/3,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(15),
-        color: Colors.grey,
+        color: Colors.grey.shade400,
       ),
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(icon),
             Text(
@@ -263,7 +269,7 @@ class _HomePageState extends State<HomePage> {
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 17),
+                  fontSize: 12),
             ),
           ],
         ),
@@ -280,15 +286,21 @@ class _HomePageState extends State<HomePage> {
         child: Stack(
           alignment: AlignmentDirectional.topEnd,
           children: [
-            Container(
-              width: 400,
-              height: 150,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(pics),
-                  fit: BoxFit.fill,
+            GestureDetector(
+              onTap: ()
+              {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> resPage(ResImge: pics, ResturantName:  name,Loc: location,Price: price,rate: rating,Delever: delver,)));
+              },
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 150,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(pics),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
                 ),
-                borderRadius: BorderRadius.circular(20),
               ),
             ),
             Positioned(
@@ -299,17 +311,16 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: 60,
-                    height: 30,
+                    width: 50,
+                    height: 35,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6),
                       color: Colors.white,
                     ),
-                    child: Text(
-                      "بروموكود",
+                    child: Text("Promo\nCode",
                       style: TextStyle(
                           color: Colors.red,
-                          fontSize: 20,
+                          fontSize: 13,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -332,66 +343,82 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.only(left: 20, right: 20),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Text(
+                name,
+                style: TextStyle(
+                    color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+              ),
           Text(
-            "الحد الادنى للطلب $price",
+            "Minimum Order $price",
             style: TextStyle(
               color: Colors.black54,
               fontSize: 20,
             ),
           ),
-          Text(
-            "هايزن",
-            style: TextStyle(
-              color: Colors.black54,
-              fontSize: 20,
-            ),
-          )
+
         ]),
       ),
       Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
-        child: Row(children: [
-          Text(
-            "$delver",
-            style: TextStyle(
-              color: Colors.black54,
-              fontSize: 20,
-            ),
+        child:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          Row(
+            children: [
+              Text(
+                "$delver",
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 17,
+                ),
+              ),
+              Icon(
+                Icons.motorcycle_rounded,
+                color: Colors.black54,
+              ),
+            ],
           ),
-          Icon(
-            Icons.motorcycle_rounded,
-            color: Colors.black54,
+          Row(
+            children: [
+              Text(
+                "$rating",
+                style: TextStyle(
+                  fontSize: 17,
+                  color: Colors.black54,
+                ),
+              ),
+              Icon(
+                Icons.tag_faces,
+                color: Colors.black54,
+              ),
+            ],
           ),
-          SizedBox(
-            width: 80,
+          Row(
+            children: [
+              Text(
+                "$location",
+                style: TextStyle(
+                  fontSize: 17,
+                  color: Colors.black54,
+                ),
+              ),
+              Icon(
+                Icons.location_on,
+                color: Colors.black54,
+
+              ),
+            ],
+
           ),
-          Text(
-            "$rating",
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.black54,
-            ),
-          ),
-          Icon(
-            Icons.tag_faces,
-            color: Colors.black54,
-          ),
-          SizedBox(
-            width: 80,
-          ),
-          Text(
-            "$location",
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.black54,
-            ),
-          ),
-          Icon(
-            Icons.location_on,
-            color: Colors.black54,
-          ),
+
         ]),
       ),
-    ]));
+          SizedBox(height: 20,),
+          Divider(
+            thickness: 2,
+            color: Colors.grey,
+          )
+    ])
+
+    );
   }
 }
