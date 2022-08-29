@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+//import 'package:talabati_pro/resPage/resPage.dart';
 
 class foodPage extends StatefulWidget {
   final String FOODimg;
@@ -23,10 +24,12 @@ class foodPage extends StatefulWidget {
 
 class _foodPageState extends State<foodPage> {
   int number = 1;
+  int Price =4000;
+  int p = 4000;
 
   @override
   Widget build(BuildContext context) {
-    int finalPrice = widget.RRICE;
+  //  int finalPrice = widget.RRICE;
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -54,10 +57,16 @@ class _foodPageState extends State<foodPage> {
               ),
             ],
           ),
-          leading: Icon(
-            Icons.search,
-            color: Colors.grey.shade900,
-          ),
+          leading:
+      GestureDetector(
+        onTap: (){
+          Navigator.pop(context);
+        },
+        child: Icon(
+                Icons.arrow_back_ios_new,
+                color: Colors.grey.shade900,
+              ),
+      ),
         ),
         backgroundColor: Colors.white,
         body: Column(
@@ -241,7 +250,7 @@ class _foodPageState extends State<foodPage> {
                             onTap: () {
                               setState(() {
                                 number++;
-                                finalPrice = finalPrice + finalPrice;
+                                Price = Price + Price;
                               });
                             },
                             child: Container(
@@ -270,7 +279,7 @@ class _foodPageState extends State<foodPage> {
                                 onTap: () {
                                   setState(() {
                                     number--;
-                                    finalPrice = finalPrice - finalPrice;
+                                    Price = Price - p;
                                   });
                                 },
                                 child: Container(
@@ -290,7 +299,7 @@ class _foodPageState extends State<foodPage> {
                     Container(
                       margin: EdgeInsets.only(top: 10),
                       child: Text(
-                        "$finalPrice",
+                        "$Price",
                         style: TextStyle(
                             fontSize: 17,
                             color: Colors.red.shade700,

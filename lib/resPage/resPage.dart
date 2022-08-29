@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:talabati_pro/data/data.dart';
 import 'package:talabati_pro/foodPage/foodPage.dart';
 
 class resPage extends StatefulWidget {
@@ -57,11 +58,17 @@ class _resPageState extends State<resPage> {
 
             ],
           ),
-          leading: Icon(
-            Icons.search,
-            color: Colors.grey.shade900,
+          leading: GestureDetector(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            child: Icon(
+                Icons.arrow_back_ios_new,
+                color: Colors.grey.shade900,
+              ),
           ),
-        ),
+          ),
+
         backgroundColor: Colors.white,
         body: Column(
      //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -171,10 +178,13 @@ class _resPageState extends State<resPage> {
               tabBackgroundColor: Colors.grey.shade100,
               padding: EdgeInsets.all(18),
               tabs: [
-                GButton(
-                  icon: (Icons.home_filled),
-                  text: 'Home',
-                ),
+
+                   GButton(
+
+                    icon: (Icons.home_filled),
+                    text: 'Home',
+                  ),
+
                 GButton(
                   icon: (Icons.search),
                   text: 'Wallet',
