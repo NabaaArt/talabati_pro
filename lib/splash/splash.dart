@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../home/home.dart';
+import '../register/register.dart';
 
 class splash extends StatefulWidget {
   const splash({Key? key}) : super(key: key);
@@ -11,10 +12,10 @@ class splash extends StatefulWidget {
 
 class _splashState extends State<splash> {
   Future Delay() async {
-    await new Future.delayed(const Duration(seconds: 3   ));
+    await new Future.delayed(const Duration(seconds: 4   ));
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => HomePage()),
+      MaterialPageRoute(builder: (context) => register()),
     );
   }
 
