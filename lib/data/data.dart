@@ -21,7 +21,7 @@ String home = "ALL";
 String neew = "NEW";
 String wallet = "WALLET";
 String gift = "FREE DELIVERY";
-String books = "";
+
 String star = "EXCLUSIVE";
 
 String breakfastIcon = "imgs/p8.png";
